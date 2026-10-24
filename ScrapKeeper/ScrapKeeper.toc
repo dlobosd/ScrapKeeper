@@ -1,0 +1,9 @@
+## Interface: 120005
+## Title: ScrapKeeper
+## Notes: Conservative junk selling with a keep list and sale preview.
+## Author: dlobosd
+## Version: 1.0.0
+## SavedVariables: ScrapKeeperDB
+
+Core.lua
+ScrapKeeper.lua
