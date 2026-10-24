@@ -98,6 +98,9 @@ frame:SetScript("OnEvent", function(_, event, name)
         if db.enabled == nil then db.enabled = true end
         if type(db.keep) ~= "table" then db.keep = {} end
     elseif event == "MERCHANT_SHOW" and db then
+        -- One attempt per visit, including skipped, completed or failed sessions.
+        -- A duplicate show event must never reset the cap or undo Shift bypass.
+        if merchant then return end
         merchant = true
         if db.enabled then Start() end
     elseif event == "MERCHANT_CLOSED" then
